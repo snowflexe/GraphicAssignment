@@ -21,18 +21,18 @@
                     gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition;
                 }
             `;
-
+  
             // Fragment shader program 
             const fsSource = `
                 void main() {
                     gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0); 
                 }
             `;
-
+  
             // Initialize a shader program; this is where all the lighting
             // for the vertices and so forth is established.
             const shaderProgram = initShaderProgram(gl, vsSource, fsSource);
-
+  
             // Collect all the info needed to use the shader program.
             // Look up which attribute our shader program is using
             // for aVertexPosition and look up uniform locations.
@@ -46,66 +46,187 @@
                 modelViewMatrix: gl.getUniformLocation(shaderProgram, 'uModelViewMatrix'),
                 },
             };
-
-            // Now create an array of positions for the object
+  
+            // Now create an array of positions for the objects
+            //foundation
             positions = [
-            // 1st object    
-            -2, -1.2, // 0
-            -2,0.4, //1
-            -1.7,0.4, //2
-            -1.7,-1.2,//3
-            
-            
-            // 2nd object
-            -2.05,0.4,
-            -2.05,0.5,
-            -1.65,0.5,
-            -1.65,0.4,
+            // outer box - offset start = 0
+            // top box
+            2.4, -1.86, //0
+            -2.4, -1.86,
+            2.4, -1.91,
+            -2.4, -1.91,
+  
+            // middle box
+            2.55, -1.93, //4
+            -2.55, -1.93,
+            2.55, -1.98,
+            -2.55, -1.98,
+  
+            //bottom box
+            2.7, -2.0, //8
+            -2.7, -2.0,
+            2.7, -2.05,
+            -2.7, -2.05,
 
-            //3rd
-            -2.1,0.5,
-            -2.1,0.6,
-            -1.6,0.6,
-            -1.6,0.5,
-            
-            //4th
-            
-            
+            //right 1st tiang 
+            2.0,0,    //12
+            2.0,-1.86,
+            2.3,-1.86,
+            2.3,0,
+            2.35,0,
+            1.95,0,
+            1.95,0.1,
+            2.35,0.1,
+            2.4,0.1,
+            2.4,0.2,
+            1.9,0.2,
+            1.9,0.1,
+            1.95,0.1,
+            2.35,0.1,
+            2.35,0,
 
+            //right 2nd tiang
+            1.2,0,    //27
+            1.2,-1.86,
+            1.5,-1.86,
+            1.5,0,
+            1.55,0,
+            1.15,0,
+            1.15,0.1,
+            1.55,0.1,
+            1.6,0.1,
+            1.6,0.2,
+            1.1,0.2,
+            1.1,0.1,
+            1.15,0.1,
+            1.55,0.1,
+            1.55,0,
+
+            //right 3rd tiang
+            0.4,0,    //42
+            0.4,-1.86,
+            0.7,-1.86,
+            0.7,0,
+            0.75,0,
+            0.35,0,
+            0.35,0.1,
+            0.75,0.1,
+            0.8,0.1,
+            0.8,0.2,
+            0.3,0.2,
+            0.3,0.1,
+            0.35,0.1,
+            0.75,0.1,
+            0.75,0,
+
+            //left 1st tiang
+            -2.0,0,    //57
+            -2.0,-1.86,
+            -2.3,-1.86,
+            -2.3,0,
+            -2.35,0,
+            -1.95,0,
+            -1.95,0.1,
+            -2.35,0.1,
+            -2.4,0.1,
+            -2.4,0.2,
+            -1.9,0.2,
+            -1.9,0.1,
+            -1.95,0.1,
+            -2.35,0.1,
+            -2.35,0,
+
+            //left 2rd tiang
+            -1.2,0,    //72
+            -1.2,-1.86,
+            -1.5,-1.86,
+            -1.5,0,
+            -1.55,0,
+            -1.15,0,
+            -1.15,0.1,
+            -1.55,0.1,
+            -1.6,0.1,
+            -1.6,0.2,
+            -1.1,0.2,
+            -1.1,0.1,
+            -1.15,0.1,
+            -1.55,0.1,
+            -1.55,0,
+
+            //left 3nd tiang
+            -0.4,0,    //87
+            -0.4,-1.86,
+            -0.7,-1.86,
+            -0.7,0,
+            -0.75,0,
+            -0.35,0,
+            -0.35,0.1,
+            -0.75,0.1,
+            -0.8,0.1,
+            -0.8,0.2,
+            -0.3,0.2,
+            -0.3,0.1,
+            -0.35,0.1,
+            -0.75,0.1,
+            -0.75,0,
             ];
-
+  
             // Here's where we call the routine that builds all the
             // objects we'll be drawing.
             const buffers = initBuffers(gl);
             drawScene(gl, programInfo, buffers);
-
+  
             // Draw the scene
-            primitive = gl.LINE_LOOP;
+            primitive = gl.TRIANGLE_STRIP; //chin
             offset = 0;
             vertexCount = 4; 
             gl.drawArrays(primitive, offset, vertexCount);
-
-            primitive = gl.LINE_LOOP;
+  
+            primitive = gl.TRIANGLE_STRIP;//chin
             offset = 4;
             vertexCount = 4; 
             gl.drawArrays(primitive, offset, vertexCount);
-
-            primitive = gl.LINE_LOOP;
+  
+            primitive = gl.TRIANGLE_STRIP;//chin
             offset = 8;
             vertexCount = 4; 
             gl.drawArrays(primitive, offset, vertexCount);
-            
 
-
-            primitive = gl.TRIANGLES_STRIP;
-            offset = 4;
-            vertexCount = 4; 
+            primitive = gl.LINE_LOOP; //pong 1st right
+            offset = 12;
+            vertexCount = 15; 
             gl.drawArrays(primitive, offset, vertexCount);
+  
+            primitive = gl.LINE_LOOP; //pong 2nd right
+            offset = 27;
+            vertexCount = 15; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.LINE_LOOP; //pong 3rd right
+            offset = 42;
+            vertexCount = 15; 
+            gl.drawArrays(primitive, offset, vertexCount)
+            
+            primitive = gl.LINE_LOOP; //pong 1st left
+            offset = 57;
+            vertexCount = 15; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.LINE_LOOP; //pong 2nd left
+            offset = 72;
+            vertexCount = 15; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.LINE_LOOP; //pong 3rd left
+            offset = 87;
+            vertexCount = 15; 
+            gl.drawArrays(primitive, offset, vertexCount)
         }
         
         var positions, offset, vertexCount, primitive;
         window.onload = main;
-
+  
         // ########################################### //
         // initBuffers 
         //
@@ -113,26 +234,26 @@
         // have one object -- a simple two-dimensional square.
         //
         function initBuffers(gl) {
-
+  
             // Create a buffer for the square's positions.
             const positionBuffer = gl.createBuffer();
-
+  
             // Select the positionBuffer as the one to apply buffer
             // operations to from here out.
             gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-
+  
             // Now pass the list of positions into WebGL to build the
             // shape. We do this by creating a Float32Array from the
             // JavaScript array, then use it to fill the current buffer.
             gl.bufferData(gl.ARRAY_BUFFER,
                         new Float32Array(positions),
                         gl.STATIC_DRAW);
-
+  
             return {
                 position: positionBuffer,
             };
         }
-
+  
         // ########################################### //
         // Draw the scene.
         //
@@ -141,10 +262,10 @@
             gl.clearDepth(1.0);                 // Clear everything
             gl.enable(gl.DEPTH_TEST);           // Enable depth testing
             gl.depthFunc(gl.LEQUAL);            // Near things obscure far things
-
+  
             // Clear the canvas before we start drawing on it.
             gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-
+  
             // Create a perspective matrix, a special matrix that is
             // used to simulate the distortion of perspective in a camera.
             // Our field of view is 45 degrees, with a width/height
@@ -156,7 +277,7 @@
             const zNear = 0.1;
             const zFar = 100.0;
             const projectionMatrix = mat4.create();
-
+  
             // note: glmatrix.js always has the first argument
             // as the destination to receive the result.
             mat4.perspective(projectionMatrix,
@@ -164,17 +285,17 @@
                             aspect,
                             zNear,
                             zFar);
-
+  
             // Set the drawing position to the "identity" point, which is
             // the center of the scene.
             const modelViewMatrix = mat4.create();
-
+  
             // Now move the drawing position a bit to where we want to
             // start drawing the square.
             mat4.translate(modelViewMatrix,     // destination matrix
                             modelViewMatrix,     // matrix to translate
                             [0.0, 0.0, -6.0]);  // amount to translate 
-
+  
             // Tell WebGL how to pull out the positions from the position
             // buffer into the vertexPosition attribute.
             {
@@ -194,10 +315,10 @@
                 gl.enableVertexAttribArray(
                     programInfo.attribLocations.vertexPosition);
             }
-
+  
             // Tell WebGL to use our program when drawing
             gl.useProgram(programInfo.program);
-
+  
             // Set the shader uniforms
             gl.uniformMatrix4fv(
                 programInfo.uniformLocations.projectionMatrix,
@@ -207,7 +328,7 @@
                 programInfo.uniformLocations.modelViewMatrix,
                 false,
                 modelViewMatrix);
-
+  
             {
                 //console.log(offset);
                 //console.log(vertexCount);
@@ -215,54 +336,54 @@
                 //gl.drawArrays(primitive, offset, vertexCount);
             }
         }
-
+  
         // ########################################### //
         // Initialize a shader program, so WebGL knows how to draw our data
         //
         function initShaderProgram(gl, vsSource, fsSource) {
             const vertexShader = loadShader(gl, gl.VERTEX_SHADER, vsSource);
             const fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, fsSource);
-
+  
             // Create the shader program
             const shaderProgram = gl.createProgram();
             gl.attachShader(shaderProgram, vertexShader);
             gl.attachShader(shaderProgram, fragmentShader);
             gl.linkProgram(shaderProgram);
-
+  
             // If creating the shader program failed, alert
             if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
                 alert('Unable to initialize the shader program: ' + gl.getProgramInfoLog(shaderProgram));
                 return null;
             }
-
+  
             return shaderProgram;
         }
-
+  
         // ########################################### //
         // creates a shader of the given type, uploads the source and
         // compiles it.
         //
         function loadShader(gl, type, source) {
             const shader = gl.createShader(type);
-
+  
             // Send the source to the shader object
             gl.shaderSource(shader, source);
-
+  
             // Compile the shader program
             gl.compileShader(shader);
-
+  
             // See if it compiled successfully
             if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
                 alert('An error occurred compiling the shaders: ' + gl.getShaderInfoLog(shader));
                 gl.deleteShader(shader);
                 return null;
             }
-
+  
             return shader;
         }
     </script>
-</head>
-
-<body>
+  </head>
+  
+  <body>
   <canvas id="glCanvas" width="640" height="480"></canvas>
-</body>
+  </body>
