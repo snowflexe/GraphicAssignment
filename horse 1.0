@@ -438,7 +438,7 @@
             -4,-2.02,
 
             // vector = 32
-            //horse //342
+            //horse 
             0.8,1.5,
             0.78,1.52,
             0.78,1.52,
@@ -491,7 +491,7 @@
             0.8,1.5,
 
            //left horse
-           -0.8,1.5,
+           -0.8,1.5,//342
             -0.78,1.52,
             -0.75,1.45,
             -0.67,1.49,
@@ -694,7 +694,7 @@
             vertexCount = 36; 
             gl.drawArrays(primitive, offset, vertexCount)
 
-            primitive = gl.LINE_STRIP; //right HORSE
+            primitive = gl.LINE_STRIP; //left HORSE
             offset = 342;
             vertexCount = 42; 
             gl.drawArrays(primitive, offset, vertexCount)
