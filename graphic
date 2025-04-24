@@ -8,7 +8,7 @@ Group Name : JTGIRLS
     <script src="gl-matrix-min.js"></script>
     <script>
         function main() {
-            const canvas = document.querySelector("#glCanvas");
+            const canvas = document.querySelector("#JTgirls");
             // Initialize the GL context
             const gl = canvas.getContext("webgl");
         
@@ -557,7 +557,207 @@ Group Name : JTGIRLS
             2.52, 0.8,
             2.39, 0.8,
 
-            
+            //face primitive right 1st middle part of tiang
+            //396
+            2.08,0.02,
+            2.08,0.08,
+            2.32,0.02, 
+            2.32,0.08,
+
+            //face primitive right 2nd middle part of tiang
+            //400
+            1.48,0.02,
+            1.48,0.08,
+            1.72,0.02,
+            1.72,0.08,
+
+            //face primitive right 3rd middle part of tiang
+            //404
+            0.88,0.02,
+            0.88,0.08,
+            1.12,0.02,
+            1.12,0.08,
+
+            //face primitive right 4th middle part of tiang
+            //408
+            0.28,0.02,
+            0.28,0.08,
+            0.52,0.02, 
+            0.52,0.08,
+
+            //face primitive left 1st middle part of tiang
+            //412
+            -2.08,0.02,
+            -2.08,0.08,
+            -2.32,0.02, 
+            -2.32,0.08,
+
+            //face primitive left 2nd middle part of tiang
+            //416
+            -1.48,0.02,
+            -1.48,0.08,
+            -1.72,0.02,
+            -1.72,0.08,
+
+            //face primitive left 3rd middle part of tiang
+            //420
+            -0.88,0.02,
+            -0.88,0.08,
+            -1.12,0.02,
+            -1.12,0.08,
+
+            //face primitive right 4th middle part of tiang
+            //424
+            -0.28,0.02,
+            -0.28,0.08,
+            -0.52,0.02, 
+            -0.52,0.08,
+
+            //line loop mini human left chin
+            -1.70,1.08,
+            -1.64,1.07,
+            -1.63,1.02,
+            -1.60,1.02,
+            -1.52,0.94,
+            -1.48,0.81,
+            -1.52,0.81,
+            -1.56,0.94,
+            -1.61,0.99,
+            -1.70,0.81,
+            -1.91,0.81,
+            -1.91,0.85,
+            -1.82,0.85,
+            -1.91,0.89,
+            -1.96,0.81,
+            -2.00,0.81,
+            -1.92,0.94,
+            -1.76,0.90,
+            -1.73,0.97,
+            -1.74,1.00,
+            -1.87,0.93,
+            -1.73,1.03,
+            -1.70,1.03,
+            -1.70,1.07,
+
+            // mini human right chin
+            1.70, 1.08,
+            1.64, 1.07,
+            1.63, 1.02,
+            1.60, 1.02,
+            1.52, 0.94,
+            1.48, 0.81,
+            1.52, 0.81,
+            1.56, 0.94,
+            1.61, 0.99,
+            1.70, 0.81,
+            1.91, 0.81,
+            1.91, 0.85,
+            1.82, 0.85,
+            1.91, 0.89,
+            1.96, 0.81,
+            2.00, 0.81,
+            1.92, 0.94,
+            1.76, 0.90,
+            1.73, 0.97,
+            1.74, 1.00,
+            1.87, 0.93,
+            1.73, 1.03,
+            1.70, 1.03,
+            1.70, 1.07,
+
+            //middle above the roof (tiff)
+            -0.18,1.8844, //block
+            -0.18,2.0146,
+            0.18,2.0146,
+            0.18,1.8844,
+
+            0.18,2.0146,
+            0,2.3,
+            -0.18,2.0146,
+
+            0,2.14,
+            -0.088,2.16,
+            -0.09,2.28,
+            -0.05,2.33,
+            -0.025,2.34,
+            -0.01,2.35,
+            0.01,2.35,
+            0.025,2.34,
+            0.05,2.33,
+            0.09,2.28,
+            0.088,2.16,
+
+            //both sides above the roof (tiff)
+            -2.65,0.846, //left block
+            -2.5,0.909,
+            -2.65,0.909,
+
+            2.65,0.846, //right block
+            2.5,0.909,
+            2.65,0.909,
+
+            -2.6,0.909, //left
+            -2.60,0.955,
+            -2.63,0.96,
+            -2.68,0.98,
+            -2.68,1.01,
+            -2.63,1.01,
+            -2.61,1.06,
+            -2.67,1.07,
+            -2.68,1.08,
+            -2.68,1.1,
+            -2.65,1.13,
+            -2.64,1.17,
+            -2.62,1.13,
+            -2.57,1.11,
+            -2.55,1.11,
+            -2.58,1.20,
+            -2.57,1.21,
+            -2.48,1.17,
+            -2.47,1.16,
+            -2.45,1.13,
+            -2.43,1.1,
+            -2.4,0.96,
+            -2.33,0.952,
+            -2.36,0.98,//tail
+            -2.4,1.06,
+            -2.4,1.09,
+            -2.36,1.1,
+            -2.33,1.08,
+            -2.36,1.04,
+
+            2.6,0.909, //right
+            2.60,0.955,
+            2.63,0.96,
+            2.68,0.98,
+            2.68,1.01,
+            2.63,1.01,
+            2.61,1.06,
+            2.67,1.07,
+            2.68,1.08,
+            2.68,1.1,
+            2.65,1.13,
+            2.64,1.17,
+            2.62,1.13,
+            2.57,1.11,
+            2.55,1.11,
+            2.58,1.20,
+            2.57,1.21,
+            2.48,1.17,
+            2.47,1.16,
+            2.45,1.13,
+            2.43,1.1,
+            2.4,0.96,
+            2.33,0.952,
+            2.36,0.98,//tail
+            2.4,1.06,
+            2.4,1.09,
+            2.36,1.1,
+            2.33,1.08,
+            2.36,1.04,
+
+
+
             ];
 
             const buffers = initBuffers(gl);
@@ -744,6 +944,87 @@ Group Name : JTGIRLS
             offset = 390;
             vertexCount = 6; 
             gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.TRIANGLE_STRIP; //pong 1st right tiang middle part white
+            offset = 396;
+            vertexCount = 4; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.TRIANGLE_STRIP; //pong 2nd right tiang middle part white
+            offset = 400;
+            vertexCount = 4; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.TRIANGLE_STRIP; //pong 3rd right tiang middle part white
+            offset = 404;
+            vertexCount = 4; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.TRIANGLE_STRIP; // pong 4th right tiang middle part white 
+            offset = 408;
+            vertexCount = 4; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.TRIANGLE_STRIP; //pong 1st left tiang middle part white
+            offset = 412;
+            vertexCount = 4; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.TRIANGLE_STRIP; //pong 2nd left tiang middle part white
+            offset = 416;
+            vertexCount = 4; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.TRIANGLE_STRIP; //pong 3rd left tiang middle part white
+            offset = 420;
+            vertexCount = 4; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.TRIANGLE_STRIP; // pong 4th left tiang middle part white 
+            offset = 424;
+            vertexCount = 4; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.LINE_LOOP; //mini human left chin
+            offset = 428;
+            vertexCount = 24; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.LINE_LOOP; //mini human left chin
+            offset = 452;
+            vertexCount = 24; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.LINE_STRIP; //middle block above the roof (tiff)
+            offset = 476;
+            vertexCount = 4; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.TRIANGLES; //middle above the roof (tiff)
+            offset = 480;
+            vertexCount = 3; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.TRIANGLE_FAN; //middle above the roof (tiff)
+            offset = 483;
+            vertexCount = 11; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.TRIANGLES; //left & right block above the roof (tiff)
+            offset = 494;
+            vertexCount = 6; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.LINE_STRIP; //left sides above the roof (tiff)
+            offset = 500;
+            vertexCount = 29; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
+            primitive = gl.LINE_STRIP; //right sides above the roof (tiff)
+            offset = 529;
+            vertexCount = 29; 
+            gl.drawArrays(primitive, offset, vertexCount)
+
         }
         
         var positions, offset, vertexCount, primitive;
@@ -907,5 +1188,5 @@ Group Name : JTGIRLS
   </head>
   
   <body>
-  <canvas id="glCanvas" width="640" height="480"></canvas>
+  <canvas id="JTgirls" width="640" height="480"></canvas>
   </body>
